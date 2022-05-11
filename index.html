@@ -116,8 +116,8 @@ function CalcWarchest(infra, tech, warchestcurrent) {
 	else if(currentnum/expectednum >= 0.2) {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Very Weak</h3>";
 	}
-	else if(warchestcurrent == ""){
-		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Unknown</h3>You won't see a rating if<br>Current Warchest is left blank";
+	else if(warchestcurrent <= 0){
+		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Unknown</h3>You won't see a rating if Current Warchest is blank";
 	}
 	else{
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Critical</h3>";
@@ -141,14 +141,14 @@ function CalcWarchest(infra, tech, warchestcurrent) {
   </tr>
   <tr>
     <td>Current Warchest:</td>
-    <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" onkeyup="CalcWarchest(infra.value, tech.value, this.value);"></td>
+    <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" value="0" onkeyup="CalcWarchest(infra.value, tech.value, this.value);"></td>
   </tr>
 </table>
-  <input type="checkbox" id="nukes" name="nukes" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value)">
+  <input type="checkbox" id="nukes" name="nukes" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;tech&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value)">
     <label for="nukes">Nukes</label>
-    <input type="checkbox" id="navy" name="navy" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value)">
+    <input type="checkbox" id="navy" name="navy" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;tech&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value)">
     <label for="navy">Navy</label>
-    <input type="checkbox" id="wrc" name="wrc" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value)">
+    <input type="checkbox" id="wrc" name="wrc" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;tech&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value)">
     <label for="wrc">WRC</label>
   <div id="warchest"></div>
   <div id="debug"></div>
