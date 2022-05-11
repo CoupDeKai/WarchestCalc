@@ -9,12 +9,6 @@ function CalcWarchest(infra) {
 		return true;
 
 	}
-	
-	if (tech == "") {
-
-		return true;
-
-	}
 
 	var standard = 20;
 
@@ -78,7 +72,7 @@ function CalcWarchest(infra) {
 
 	if(document.getElementById('wrc').checked == true) {
 
-		num = num * (1 + tech * 0.01);
+		num = num * (1 + (tech * 0.01));
 
 	}
 
