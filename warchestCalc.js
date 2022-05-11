@@ -9,12 +9,22 @@ function CalcWarchest(infra) {
 		return true;
 
 	}
+	
+	if (tech == "") {
+
+		return true;
+
+	}
 
 	var standard = 20;
 
 	var infra = infra.replace(/\$|\,/g,'');
 
 	var infra = parseFloat(infra);
+	
+	var tech = tech.replace(/\$|\,/g,'');
+
+	var tech = parseFloat(tech);
 
 	var cost = 0.04;
 
@@ -68,7 +78,7 @@ function CalcWarchest(infra) {
 
 	if(document.getElementById('wrc').checked == true) {
 
-		num = num * 1.3;
+		num = num * (1 + tech * 0.01);
 
 	}
 
