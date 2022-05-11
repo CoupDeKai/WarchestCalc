@@ -2,7 +2,7 @@
 
 
 
-function CalcWarchest(infra) {
+function CalcWarchest(infra, tech) {
 
 	if (infra == "") {
 
