@@ -3,18 +3,129 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>Warchest Calculator</title>
+ 
 <style type="text/css">
 html { background: #ccc; font: 12px/14px Arial, Helvetica, sans-serif; }
 .container { width: 300px; margin: 50px auto; border: 2px solid #888; background: #fff; padding: 20px; }
 </style>
-<script language="javascript" src="./warchestCalc.js"></script>
+ 
+<script>
+function CalcWarchest(infra, tech) {
+
+	if (infra == "") {
+
+		return true;
+
+	}
+
+	var standard = 20;
+
+	var infra = infra.replace(/\$|\,/g,'');
+
+	var infra = parseFloat(infra);
+	
+	var tech = tech.replace(/\$|\,/g,'');
+
+	var tech = parseFloat(tech);
+
+	var cost = 0.04;
+
+	if(infra >= 8000) { cost = 0.1750; }
+
+	else if(infra >= 5000) { cost = 0.1725; }
+
+	else if(infra >= 4000) { cost = 0.17; }
+
+	else if(infra >= 3000) { cost = 0.15; }
+
+	else if(infra >= 2000) { cost = 0.13; }
+
+	else if(infra >= 1000) { cost = 0.11; }
+
+	else if(infra >= 700) { cost = 0.09; }
+
+	else if(infra >= 500) { cost = 0.08; }
+
+	else if(infra >= 300) { cost = 0.07; }
+
+	else if(infra >= 200) { cost = 0.06; }
+
+	else if(infra >= 100) { cost = 0.05; }
+
+	var days = standard * 3;
+
+	if (infra >= 2000) { days = standard * 4; }
+
+	if (infra >= 4000) { days = standard * 5; }
+
+	if (infra >= 8000) { days = standard * 6; }
+
+	var adjInfra = infra + 20;
+
+	num = parseFloat(infra) * parseFloat(cost) * parseFloat(adjInfra) * parseInt(days);
+
+	if(document.getElementById('nukes').checked == true) {
+
+		num += 600000 * days;
+
+	}
+
+	if(document.getElementById('navy').checked == true) {
+
+		//num += 700000 * days;
+
+		num += (infra * 200) * days;
+
+	}
+
+	if(document.getElementById('wrc').checked == true) {
+
+		num = num * (1 + (tech * 0.01));
+
+	}
+
+	//document.getElementById("debug").innerHTML = num + "<br />debug: " + cost + " / " + days + " / " + infra + " / " + adjInfra;
+
+	if(isNaN(num)) {
+
+		ns = "0";
+
+	}
+
+	sign = (num == (num = Math.abs(num)));
+
+	num = Math.floor(num*100+0.50000000001);
+
+	cents = num%100;
+
+	num = Math.floor(num/100).toString();
+
+	if(cents<10) {
+
+		cents = "0" + cents;
+
+	}
+
+	for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++) {
+
+		num = num.substring(0,num.length-(4*i+3))+','+
+
+		num.substring(num.length-(4*i+3));
+
+	}
+
+	document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>";
+
+}
+</script>
+ 
 </head>
 
 <body>
  <div class="container">
   <h3>Warchest Calculator</h3>
-  Your Infra Level: <input type="text" class="inputInfra" id="infra" name="infra" onkeyup="CalcWarchest(this.value, tech);"><br>
-  Your Tech Level: <input type="text" class="inputTech" id="tech" name="tech" onkeyup="CalcWarchest(infra, this.value);"><br>
+  Your Infra Level: <input type="text" class="inputInfra" id="infra" name="infra" onkeyup="CalcWarchest(this.value, tech.value);"><br>
+  Your Tech Level: <input type="text" class="inputTech" id="tech" name="tech" onkeyup="CalcWarchest(infra.value, this.value);"><br>
     <input type="checkbox" id="nukes" name="nukes" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value)">
     <label for="nukes">Nukes</label>
     <input type="checkbox" id="navy" name="navy" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value)">
