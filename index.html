@@ -79,6 +79,8 @@ function CalcWarchest(infra, tech, warchestcurrent) {
 
 	sign = (num == (num = Math.abs(num)));
 
+	expectednum = num;
+	
 	num = Math.floor(num*100+0.50000000001);
 
 	cents = num%100;
@@ -94,7 +96,14 @@ function CalcWarchest(infra, tech, warchestcurrent) {
 		num.substring(num.length-(4*i+3));
 	}
 	
-	document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3><br />Your Warchest Is: <h3>Excellent Placeholder</h3>";
+	currentnum = parseFloat(warchestcurrent);
+	
+	if(currentnum/expectednum >= 1.8) {
+		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Excellent</h3>";
+	}
+	else {
+		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Critical</h3>";
+	}
 }
 </script>
  
@@ -105,7 +114,7 @@ function CalcWarchest(infra, tech, warchestcurrent) {
   <h3>Warchest Calculator</h3>
   Your Infra Level: <input type="text" class="inputInfra" id="infra" name="infra" onkeyup="CalcWarchest(this.value, tech.value, warchestcurrent.value);"><br>
   Your Tech Level: <input type="text" class="inputTech" id="tech" name="tech" onkeyup="CalcWarchest(infra.value, this.value, warchestcurrent.value);"><br>
-  Your Warchest Level: <input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" onkeyup="CalcWarchest(infra.value, tech.value, this.value);"><br>
+  Current Warchest: <input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" onkeyup="CalcWarchest(infra.value, tech.value, this.value);"><br>
     <input type="checkbox" id="nukes" name="nukes" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value)">
     <label for="nukes">Nukes</label>
     <input type="checkbox" id="navy" name="navy" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value)">
