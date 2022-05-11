@@ -111,7 +111,7 @@ function CalcWarchest(infra, tech, warchestcurrent) {
 	else if(currentnum/expectednum >= 0.2) {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Very Weak</h3>";
 	}
-	else if(warchestcurrent < 0.2 && warchestcurrent > 0){
+	else if(currentnum/expectednum < 0.2 && currentnum/expectednum > 0){
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Critical</h3>";
 	}
 	else{
