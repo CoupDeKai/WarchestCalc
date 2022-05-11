@@ -132,8 +132,8 @@ function CalcWarchest(infra, tech, warchestcurrent) {
   <h3>Warchest Calculator</h3>
   <table>
   <tr>
-    <th>Your Infra Level:</th>
-    <th><input type="text" class="inputInfra" id="infra" name="infra" onkeyup="CalcWarchest(this.value, tech.value, warchestcurrent.value);"></th>
+    <td>Your Infra Level:</th>
+    <td><input type="text" class="inputInfra" id="infra" name="infra" onkeyup="CalcWarchest(this.value, tech.value, warchestcurrent.value);"></th>
   </tr>
   <tr>
     <td>Your Tech Level:</td>
@@ -144,10 +144,7 @@ function CalcWarchest(infra, tech, warchestcurrent) {
     <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" onkeyup="CalcWarchest(infra.value, tech.value, this.value);"></td>
   </tr>
 </table>
-  Your Infra Level: <input type="text" class="inputInfra" id="infra" name="infra" onkeyup="CalcWarchest(this.value, tech.value, warchestcurrent.value);"><br>
-  Your Tech Level: <input type="text" class="inputTech" id="tech" name="tech" onkeyup="CalcWarchest(infra.value, this.value, warchestcurrent.value);"><br>
-  Current Warchest: <input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" onkeyup="CalcWarchest(infra.value, tech.value, this.value);"><br>
-    <input type="checkbox" id="nukes" name="nukes" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value)">
+  <input type="checkbox" id="nukes" name="nukes" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value)">
     <label for="nukes">Nukes</label>
     <input type="checkbox" id="navy" name="navy" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value)">
     <label for="navy">Navy</label>
