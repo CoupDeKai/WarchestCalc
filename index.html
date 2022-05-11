@@ -10,7 +10,7 @@ html { background: #ccc; font: 12px/14px Arial, Helvetica, sans-serif; }
 </style>
  
 <script>
-function CalcWarchest(infra, tech) {
+function CalcWarchest(infra, tech, warchest) {
 
 	if (infra == "") {
 
@@ -103,9 +103,9 @@ function CalcWarchest(infra, tech) {
 <body>
  <div class="container">
   <h3>Warchest Calculator</h3>
-  Your Infra Level: <input type="text" class="inputInfra" id="infra" name="infra" onkeyup="CalcWarchest(this.value, tech.value);"><br>
-  Your Tech Level: <input type="text" class="inputTech" id="tech" name="tech" onkeyup="CalcWarchest(infra.value, this.value);"><br>
-  Your Warchest Level: <input type="text" class="inputWarchest" id="warchest" name="warchest" onkeyup="CalcWarchest(infra.value, this.value);"><br>
+  Your Infra Level: <input type="text" class="inputInfra" id="infra" name="infra" onkeyup="CalcWarchest(this.value, tech.value, warchest.value);"><br>
+  Your Tech Level: <input type="text" class="inputTech" id="tech" name="tech" onkeyup="CalcWarchest(infra.value, this.value, warchest.value);"><br>
+  Your Warchest Level: <input type="text" class="inputWarchest" id="warchest" name="warchest" onkeyup="CalcWarchest(infra.value, tech.value, this.value);"><br>
     <input type="checkbox" id="nukes" name="nukes" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value)">
     <label for="nukes">Nukes</label>
     <input type="checkbox" id="navy" name="navy" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value)">
