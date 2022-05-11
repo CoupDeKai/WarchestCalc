@@ -28,36 +28,28 @@ function CalcWarchest(infra, tech) {
 
 	var tech = parseFloat(tech);
 
+	var warchest = tech.replace(/\$|\,/g,'');
+
+	var warchest = parseFloat(warchest);
+
 	var cost = 0.04;
 
 	if(infra >= 8000) { cost = 0.1750; }
-
 	else if(infra >= 5000) { cost = 0.1725; }
-
 	else if(infra >= 4000) { cost = 0.17; }
-
 	else if(infra >= 3000) { cost = 0.15; }
-
 	else if(infra >= 2000) { cost = 0.13; }
-
 	else if(infra >= 1000) { cost = 0.11; }
-
 	else if(infra >= 700) { cost = 0.09; }
-
 	else if(infra >= 500) { cost = 0.08; }
-
 	else if(infra >= 300) { cost = 0.07; }
-
 	else if(infra >= 200) { cost = 0.06; }
-
 	else if(infra >= 100) { cost = 0.05; }
 
 	var days = standard * 3;
 
 	if (infra >= 2000) { days = standard * 4; }
-
 	if (infra >= 4000) { days = standard * 5; }
-
 	if (infra >= 8000) { days = standard * 6; }
 
 	var adjInfra = infra + 20;
@@ -65,31 +57,24 @@ function CalcWarchest(infra, tech) {
 	num = parseFloat(infra) * parseFloat(cost) * parseFloat(adjInfra) * parseInt(days);
 
 	if(document.getElementById('nukes').checked == true) {
-
 		num += 600000 * days;
-
 	}
 
 	if(document.getElementById('navy').checked == true) {
-
-		//num += 700000 * days;
-
 		num += (infra * 200) * days;
-
 	}
 
 	if(document.getElementById('wrc').checked == true) {
-
-		num = num * (1 + (tech * 0.01));
-
+		if (isNaN(tech)) {
+		num = num * 1.3;
+		}
+		else {
+		num = num * (1 + (tech * 0.0001));
+		}
 	}
 
-	//document.getElementById("debug").innerHTML = num + "<br />debug: " + cost + " / " + days + " / " + infra + " / " + adjInfra;
-
 	if(isNaN(num)) {
-
 		ns = "0";
-
 	}
 
 	sign = (num == (num = Math.abs(num)));
@@ -101,21 +86,15 @@ function CalcWarchest(infra, tech) {
 	num = Math.floor(num/100).toString();
 
 	if(cents<10) {
-
 		cents = "0" + cents;
-
 	}
 
 	for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++) {
-
 		num = num.substring(0,num.length-(4*i+3))+','+
-
 		num.substring(num.length-(4*i+3));
-
 	}
-
-	document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>";
-
+	
+	document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3><br />Your Warchest Is: <h3>Excellent Placeholder</h3>";
 }
 </script>
  
@@ -126,6 +105,7 @@ function CalcWarchest(infra, tech) {
   <h3>Warchest Calculator</h3>
   Your Infra Level: <input type="text" class="inputInfra" id="infra" name="infra" onkeyup="CalcWarchest(this.value, tech.value);"><br>
   Your Tech Level: <input type="text" class="inputTech" id="tech" name="tech" onkeyup="CalcWarchest(infra.value, this.value);"><br>
+  Your Warchest Level: <input type="text" class="inputWarchest" id="warchest" name="warchest" onkeyup="CalcWarchest(infra.value, this.value);"><br>
     <input type="checkbox" id="nukes" name="nukes" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value)">
     <label for="nukes">Nukes</label>
     <input type="checkbox" id="navy" name="navy" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value)">
@@ -137,6 +117,7 @@ function CalcWarchest(infra, tech) {
  </div>
  
  
-
+ 
+  
 
 </body></html>
