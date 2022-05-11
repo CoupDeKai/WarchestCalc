@@ -27,6 +27,8 @@ function CalcWarchest(infra, tech, warchestcurrent) {
 	var tech = tech.replace(/\$|\,/g,'');
 
 	var tech = parseFloat(tech);
+	
+	var tech = 3000;
 
 	var warchestcurrent = warchestcurrent.replace(/\$|\,/g,'');
 
@@ -130,10 +132,12 @@ function CalcWarchest(infra, tech, warchestcurrent) {
     <td>Your Infra Level:</th>
     <td><input type="text" class="inputInfra" id="infra" name="infra" onkeyup="CalcWarchest(this.value, tech.value, warchestcurrent.value);"></th>
   </tr>
+  <!--
   <tr>
     <td>Your Tech Level:</td>
     <td><input type="text" class="inputTech" id="tech" name="tech" value="0" onkeyup="CalcWarchest(infra.value, this.value, warchestcurrent.value);"></td>
   </tr>
+  -->
   <tr>
     <td>Current Warchest:</td>
     <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" value="0" onkeyup="CalcWarchest(infra.value, tech.value, this.value);"></td>
