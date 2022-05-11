@@ -65,12 +65,7 @@ function CalcWarchest(infra, tech, warchestcurrent) {
 	}
 
 	if(document.getElementById('wrc').checked == true) {
-		if (tech == "") {
-		num = num * 1.3;
-		}
-		else {
 		num = num * (1 + (tech * 0.0001));
-		}
 	}
 
 	if(isNaN(num)) {
@@ -137,7 +132,7 @@ function CalcWarchest(infra, tech, warchestcurrent) {
   </tr>
   <tr>
     <td>Your Tech Level:</td>
-    <td><input type="text" class="inputTech" id="tech" name="tech" onkeyup="CalcWarchest(infra.value, this.value, warchestcurrent.value);"></td>
+    <td><input type="text" class="inputTech" id="tech" name="tech" value="0" onkeyup="CalcWarchest(infra.value, this.value, warchestcurrent.value);"></td>
   </tr>
   <tr>
     <td>Current Warchest:</td>
