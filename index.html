@@ -101,7 +101,25 @@ function CalcWarchest(infra, tech, warchestcurrent) {
 	if(currentnum/expectednum >= 1.8) {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Excellent</h3>";
 	}
-	else {
+	else if(currentnum/expectednum >= 1.4) {
+		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Very Good</h3>";
+	}
+	else if(currentnum/expectednum >= 1.1) {
+		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Good</h3>";
+	}
+	else if(currentnum/expectednum >= 0.9) {
+		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Standard</h3>";
+	}
+	else if(currentnum/expectednum >= 0.6) {
+		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Weak</h3>";
+	}
+	else if(currentnum/expectednum >= 0.2) {
+		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Very Weak</h3>";
+	}
+	else if(currentnum==""){
+		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Unknown</h3>";
+	}
+	else{
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Critical</h3>";
 	}
 }
@@ -112,6 +130,20 @@ function CalcWarchest(infra, tech, warchestcurrent) {
 <body>
  <div class="container">
   <h3>Warchest Calculator</h3>
+  <table>
+  <tr>
+    <th>Your Infra Level:</th>
+    <th><input type="text" class="inputInfra" id="infra" name="infra" onkeyup="CalcWarchest(this.value, tech.value, warchestcurrent.value);"></th>
+  </tr>
+  <tr>
+    <td>Your Tech Level:</td>
+    <td><input type="text" class="inputTech" id="tech" name="tech" onkeyup="CalcWarchest(infra.value, this.value, warchestcurrent.value);"></td>
+  </tr>
+  <tr>
+    <td>Current Warchest:</td>
+    <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" onkeyup="CalcWarchest(infra.value, tech.value, this.value);"></td>
+  </tr>
+</table>
   Your Infra Level: <input type="text" class="inputInfra" id="infra" name="infra" onkeyup="CalcWarchest(this.value, tech.value, warchestcurrent.value);"><br>
   Your Tech Level: <input type="text" class="inputTech" id="tech" name="tech" onkeyup="CalcWarchest(infra.value, this.value, warchestcurrent.value);"><br>
   Current Warchest: <input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" onkeyup="CalcWarchest(infra.value, tech.value, this.value);"><br>
