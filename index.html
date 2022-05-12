@@ -117,7 +117,7 @@ function CalcWarchest(infra, warchestcurrent, rulername) {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Very Weak</h3>";
 	}
 	else if(currentnum/expectednum < 0.2 && currentnum/expectednum > 0){
-		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Critical</h3><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Go to Google\" />";
+		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Critical</h3><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
 	}
 	else{
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Unknown</h3>You won't see a rating if Current Warchest is blank";
