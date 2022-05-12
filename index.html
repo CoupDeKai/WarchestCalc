@@ -127,6 +127,10 @@ function CalcWarchest(infra, warchestcurrent, rulername, password) {
 	else{
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3><br>You won't see a rating if Current Warchest is blank";
 	}
+	document.getElementByID("previewruler").innerHTML = rulername;
+	document.getElementByID("previewinfra").innerHTML = infra;
+	document.getElementByID("previewwarchest").innerHTML = warchestcurrent;
+	document.getElementByID("previewpassword").innerHTML = password;
 }
 </script>
  
@@ -138,19 +142,23 @@ function CalcWarchest(infra, warchestcurrent, rulername, password) {
   <table>
   <tr>
     <td>Your Ruler Name:</td>
-    <td><input type="text" class="inputRulername" id="rulername" name="rulername" value="Not Nation Name!" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, this.value, password.value);"></td>
+    <td><input type="text" class="inputRulername" id="rulername" name="rulername" placeholder="Not Nation Name!" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, this.value, password.value);"></td>
+    <td id="previewruler"></td>
   </tr>
   <tr>
-    <td>Your Infra Level:</th>
-    <td><input type="text" class="inputInfra" id="infra" name="infra" onkeyup="CalcWarchest(this.value, warchestcurrent.value, rulername.value, password.value);"></th>
+    <td>Your Infra Level:</td>
+    <td><input type="text" class="inputInfra" id="infra" name="infra" placeholder="4999.99" onkeyup="CalcWarchest(this.value, warchestcurrent.value, rulername.value, password.value);"></th>
+    <td id="previewinfra"></td>
   </tr>
   <tr>
     <td>Current Warchest:</td>
-    <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" value="0" onkeyup="CalcWarchest(infra.value, this.value, rulername.value, password.value);"></td>
+    <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" placeholder="$1,000,000,000" onkeyup="CalcWarchest(infra.value, this.value, rulername.value, password.value);"></td>
+    <td id="previewwarchest"></td>
   </tr>
   <tr>
     <td>Your Password:</td>
-    <td><input type="text" class="inputPassword" id="password" name="password" value="00000" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, rulername.value, this.value);"></td>
+    <td><input type="text" class="inputPassword" id="password" name="password" placeholder="12345" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, rulername.value, this.value);"></td>
+    <td id="previewpassword"></td>>
   </tr>
 </table>
   <input type="checkbox" id="nukes" name="nukes" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value, document.getElementById(&#39;rulername&#39;).value, document.getElementById(&#39;password&#39;).value)">
