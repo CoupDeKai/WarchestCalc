@@ -10,7 +10,7 @@ html { background: #ccc; font: 12px/14px Arial, Helvetica, sans-serif; }
 </style>
  
 <script>
-function CalcWarchest(infra, warchestcurrent, rulername) {
+function CalcWarchest(infra, warchestcurrent, rulername, password) {
 
 	if (infra == "") {
 
@@ -25,6 +25,8 @@ function CalcWarchest(infra, warchestcurrent, rulername) {
 	var infra = parseFloat(infra);
 	
 	var rulername = rulername.replace(/\$|\,/g,'');
+	
+	var password = password.replace(/\$|\,/g,'');
 
 	var warchestcurrent = warchestcurrent.replace(/\$|\,/g,'');
 
@@ -102,25 +104,25 @@ function CalcWarchest(infra, warchestcurrent, rulername) {
 
 	
 	if(currentnum/expectednum >= 1.8) {
-		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Excellent</h3><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
+		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Excellent</h3><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
 	}
 	else if(currentnum/expectednum >= 1.4) {
-		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Very Good</h3><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
+		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Very Good</h3><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
 	}
 	else if(currentnum/expectednum >= 1.1) {
-		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Good</h3><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
+		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Good</h3><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
 	}
 	else if(currentnum/expectednum >= 0.9) {
-		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Standard</h3><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
+		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Standard</h3><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
 	}
 	else if(currentnum/expectednum >= 0.6) {
-		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Weak</h3><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
+		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Weak</h3><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
 	}
 	else if(currentnum/expectednum >= 0.2) {
-		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Very Weak</h3><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
+		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Very Weak</h3><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
 	}
 	else if(currentnum/expectednum < 0.2 && currentnum/expectednum > 0){
-		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Critical</h3><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
+		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Critical</h3><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
 	}
 	else{
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Should Be: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>Current Warchest: <h3>Unknown</h3><br>You won't see a rating if Current Warchest is blank";
@@ -136,22 +138,26 @@ function CalcWarchest(infra, warchestcurrent, rulername) {
   <table>
   <tr>
     <td>Your Ruler Name:</td>
-    <td><input type="text" class="inputRulername" id="rulername" name="rulername" value="Not Nation Name!" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, this.value);"></td>
+    <td><input type="text" class="inputRulername" id="rulername" name="rulername" value="Not Nation Name!" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, this.value, password.value);"></td>
   </tr>
   <tr>
     <td>Your Infra Level:</th>
-    <td><input type="text" class="inputInfra" id="infra" name="infra" onkeyup="CalcWarchest(this.value, warchestcurrent.value, rulername.value);"></th>
+    <td><input type="text" class="inputInfra" id="infra" name="infra" onkeyup="CalcWarchest(this.value, warchestcurrent.value, rulername.value, password.value);"></th>
   </tr>
   <tr>
     <td>Current Warchest:</td>
-    <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" value="0" onkeyup="CalcWarchest(infra.value, this.value, rulername.value);"></td>
+    <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" value="0" onkeyup="CalcWarchest(infra.value, this.value, rulername.value, password.value);"></td>
+  </tr>
+  <tr>
+    <td>Your Password:</td>
+    <td><input type="text" class="inputPassword" id="password" name="password" value="00000" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, rulername.value, this.value);"></td>
   </tr>
 </table>
-  <input type="checkbox" id="nukes" name="nukes" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value, document.getElementById(&#39;rulername&#39;).value)">
+  <input type="checkbox" id="nukes" name="nukes" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value, document.getElementById(&#39;rulername&#39;).value, document.getElementById(&#39;password&#39;).value)">
     <label for="nukes">Nukes</label>
-    <input type="checkbox" id="navy" name="navy" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value, document.getElementById(&#39;rulername&#39;).value)">
+    <input type="checkbox" id="navy" name="navy" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value, document.getElementById(&#39;rulername&#39;).value, document.getElementById(&#39;password&#39;).value)">
     <label for="navy">Navy</label>
-    <input type="checkbox" id="wrc" name="wrc" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value, document.getElementById(&#39;rulername&#39;).value)">
+    <input type="checkbox" id="wrc" name="wrc" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value, document.getElementById(&#39;rulername&#39;).value, document.getElementById(&#39;password&#39;).value)">
     <label for="wrc">WRC</label>
   <div id="warchest"></div>
   <div id="debug"></div>
