@@ -17,6 +17,12 @@ function CalcWarchest(infra, warchestcurrent, rulername, password) {
 		return true;
 
 	}
+	
+	if (warchestcurrent == "") {
+
+		return true;
+
+	}
 
 	var standard = 20;
 
@@ -109,8 +115,6 @@ function CalcWarchest(infra, warchestcurrent, rulername, password) {
 	previewcents = previewnum%100;
 
 	previewnum = Math.floor(previewnum/100).toString();
-	
-	currentnum = parseFloat(warchestcurrent);
 
 	if(previewcents<10) {
 		previewcents = "0" + previewcents;
