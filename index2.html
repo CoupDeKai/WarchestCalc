@@ -3,9 +3,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Warchest Calculator</title>
 <style type="text/css">
-html { background: #ccc; font: 12px/14px Arial, Helvetica, sans-serif; }
-.container { width: 300px; margin: 50px auto; margin-left: 300px; border: 2px solid #888; background: #fff; padding: 20px; }
-.containerleft { width: 300px; margin: 50px auto; border: 2px solid #888; background: #fff; float: left; padding: 20px; }
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+/*  GRID OF THREE  */
+.span_3_of_3 { width: 100%; }
+.span_2_of_3 { width: 66.13%; }
+.span_1_of_3 { width: 32.26%; }
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+	.col {  margin: 1% 0 1% 0%; }
+	.span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%; }
+}
 </style>
 
 <script>
@@ -44,11 +71,16 @@ function CalcWarchest(infra, warchestcurrent, rulername, password) {
   <div id="warchest"></div>
  </div>
   
-<div style="width: 100%; display: table;">
-    <div style="display: table-row margin: 50px auto; padding: 20px;">
-        <div style="width: 300px; display: table-cell; margin: 20px auto; border: 2px solid #888; background: #fff; padding: 20px;"> Left </div>
-        <div style="width: 300px; display: table-cell; margin: 20px auto; border: 2px solid #888; background: #fff; padding: 20px;"> Right </div>
-    </div>
+<div class="section group">
+	<div class="col span_1_of_3">
+	This is column 1
+	</div>
+	<div class="col span_1_of_3">
+	This is column 2
+	</div>
+	<div class="col span_1_of_3">
+	This is column 3
+	</div>
 </div>
   
 </body></html>
