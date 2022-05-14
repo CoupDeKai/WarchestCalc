@@ -1,87 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- saved from url=(0040)http://www.abtirsi.com/warchestCalc.html -->
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Warchest Calculator</title>
-<style type="text/css">
-html { background: #ccc; font: 12px/14px Arial, Helvetica, sans-serif; }
-/*  SECTIONS  */
-.section {
-	clear: both;
-	padding: 0px;
-	margin: 0px;
-}
 
-/*  COLUMN SETUP  */
-.col {
-	display: block;
-	float:left;
-	margin: 1% 0 1% 2%;
-}
-.col:first-child { margin-left: 0; }
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
-/*  GROUPING  */
-.group:before,
-.group:after { content:""; display:table; }
-.group:after { clear:both;}
-.group { zoom:1; /* For IE 6/7 */ }
-/*  GRID OF THREE  */
-.span_3_of_3 { width: 99.5%; }
-.span_2_of_3 { width: 65.5%; }
-.span_1_of_3 { width: 31.5%; }
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
 
-/*  GO FULL WIDTH BELOW 480 PIXELS */
-@media only screen and (max-width: 480px) {
-	.col {  margin: 1% 0 1% 0%; }
-	.span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%; }
-}
-</style>
-
-<script>
-function CalcWarchest(infra, warchestcurrent, rulername, password) {
-}
-</script>
-</head>
-<body>
-  
- <div class="container">
-  <h3>Warchest Calculator</h3>
-  <table>
-  <tr>
-    <td>Your Ruler Name:</td>
-    <td><input type="text" class="inputRulername" id="rulername" name="rulername" placeholder="Not Nation Name!" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, this.value, password.value);"></td>
-  </tr>
-  <tr>
-    <td>Your Infra Level:</td>
-    <td><input type="text" class="inputInfra" id="infra" name="infra" placeholder="4999.99" onkeyup="CalcWarchest(this.value, warchestcurrent.value, rulername.value, password.value);"></td>
-  </tr>
-  <tr>
-    <td>Current Warchest:</td>
-    <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" placeholder="$1,000,000,000" onkeyup="CalcWarchest(infra.value, this.value, rulername.value, password.value);"></td>
-  </tr>
-  <tr>
-    <td>Your Password:</td>
-    <td><input type="text" class="inputPassword" id="password" name="password" placeholder="12345" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, rulername.value, this.value);"></td>
-  </tr>
-</table>
-  <input type="checkbox" id="nukes" name="nukes" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value, document.getElementById(&#39;rulername&#39;).value, document.getElementById(&#39;password&#39;).value)">
-    <label for="nukes">Nukes</label>
-    <input type="checkbox" id="navy" name="navy" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value, document.getElementById(&#39;rulername&#39;).value, document.getElementById(&#39;password&#39;).value)">
-    <label for="navy">Navy</label>
-    <input type="checkbox" id="wrc" name="wrc" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value, document.getElementById(&#39;rulername&#39;).value, document.getElementById(&#39;password&#39;).value)">
-    <label for="wrc">WRC</label>
-  <div id="warchest"></div>
- </div>
-  
-<div class="section group">
-	<div class="col span_1_of_3" style="border: 2px solid #888; background: #fff;">
-	This is column 1
-	</div>
-	<div class="col span_1_of_3" style="border: 2px solid #888; background: #fff;">
-	This is column 2
-	</div>
-	<div class="col span_1_of_3" style="border: 2px solid #888; background: #fff;">
-	This is column 3
-	</div>
-</div>
-  
-</body></html>
+    <body>
+      <div class="container">
+   	 <div class="row">
+   	   <div class="col s12">This div is 12-columns wide on all screen sizes</div>
+    	   <div class="col s6">6-columns (one-half)</div>
+   	   <div class="col s6">6-columns (one-half)</div>
+   	 </div>
+      </div>
+	    
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+  </html>
