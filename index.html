@@ -7,6 +7,21 @@
 <style type="text/css">
 html { background: #ccc; font: 12px/14px Arial, Helvetica, sans-serif; }
 .container { width: 300px; margin: 50px auto; border: 2px solid #888; background: #fff; padding: 20px; }
+	input#tech, input#infra {
+        width: 100%;
+        font: inherit;
+        padding: 0px 0px;
+        border: 2px solid hsl(0, 76%, 50%); 
+        outline: none;
+      }
+      /* Show red borders when filled, but invalid */
+      input:not(:placeholder-shown)#tech, input:not(:placeholder-shown)#infra {
+        border-color: hsl(0, 76%, 50%);;
+      }
+      /* Show green borders when valid */
+      input:valid#tech, input:valid#infra {
+        border-color: hsl(120, 76%, 50%);
+     }
 </style>
  
 <script>
@@ -176,11 +191,11 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
   </tr>
   <tr>
     <td>Your Infra Level:</td>
-    <td><input type="text" class="inputInfra" id="infra" name="infra" placeholder="4999.99" required onkeyup="CalcWarchest(this.value, warchestcurrent.value, rulername.value, password.value, tech.value);"></td>
+    <td><input type="text" class="inputInfra" id="infra" name="infra" placeholder="4999.99" required pattern="[0-9,$]*[0-9,$]" onkeyup="CalcWarchest(this.value, warchestcurrent.value, rulername.value, password.value, tech.value);"></td>
   </tr>
   <tr>
     <td>Your Tech Level:</td>
-    <td><input type="text" class="inputTech" id="tech" name="tech" value="0" placeholder="3000" required onkeyup="CalcWarchest(infra.value, warchestcurrent.value, rulername.value, password.value, this.value);"></td>
+    <td><input type="text" class="inputTech" id="tech" name="tech" value="0" placeholder="3000" required pattern="[0-9,$]*[0-9,$]" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, rulername.value, password.value, this.value);"></td>
   </tr>
   <tr>
     <td>Current Warchest:</td>
