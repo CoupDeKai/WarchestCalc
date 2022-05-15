@@ -18,36 +18,26 @@
         padding: 40px 15px;
       }
       form {
-  max-width: 20em;
   border: 0.5em solid hsl(30, 76%, 10%);
-  padding: 2em;
-  background: white;
 }
 
-.input {
+.techin {
   display: flex; 
   align-items: center;
 }
-
-label {
-  margin-right: 1ch;
-}
-
-input {
+techin {
   width: 100%;
   font: inherit;
   padding: 0.25em 0.5em;
   border: 0.125em solid hsl(30, 76%, 10%); 
   outline: none;
 }
-
 /* Show red borders when filled, but invalid */
-input:not(:placeholder-shown) {
+techin:not(:placeholder-shown) {
   border-color: hsl(0, 76%, 50%);;
 }
-
 /* Show green borders when valid */
-input:valid {
+techin:valid {
   border-color: hsl(120, 76%, 50%);
 }
     </style>
@@ -95,15 +85,8 @@ input:valid {
         </ol>
         
         <form action="#" autocomplete="off">
-          <h2>Empty Validation with pure CSS</h2>
-          <p>Type something into this input field below.</p>
-          <ul>
-            <li>When input is filled: Borders turn green</li>
-            <li>When validation fails: Borders turn red</li>
-          </ul>
-          <div class="input">
-            <label for="input" >Label </label>
-            <input type="text" name="input" id="input" required placeholder="Type something in here" pattern=".*\S.*">
+          <div class="techin">
+            <input type="text" name="techin" id="techin" required placeholder="Type something in here" pattern="[0-9,$]*[0-9,$]">
           </div>
         </form>
         
