@@ -20,7 +20,7 @@ html { background: #ccc; font: 12px/14px Arial, Helvetica, sans-serif; }
         border-color: hsl(0, 76%, 50%);;
       }
       /* Show green borders when valid */
-      input:valid#tech, input:valid#infra, input:not(:placeholder-shown)#warchestcurrent {
+      input:valid#tech, input:valid#infra, input:valid#warchestcurrent {
         border-color: hsl(120, 76%, 50%);
      }
 </style>
@@ -105,7 +105,11 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	}
 
 	if(document.getElementById('wrc').checked == true) {
-		num = num * (1.24+(tech*0.00002));
+		if(isNaN(tech) || tech2.value.length == 0) {
+		   num = num * 1.24;
+		} else {
+		   num = num * (1.24+(tech*0.00002));
+		}
 		wrcanswer = "Yes";
 	}
 
