@@ -14,9 +14,9 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 3000) 
 	
 	tech2 = document.getElementById('tech');
 	
-	if(tech2.value.length == 0) {
-    		
-		tech = 3000;
+	if(tech.value.length == 0) {
+    		tech.value = "100";
+		tech = 100;
 	}
 
 	if (infra === undefined || infra === "" || infra === null || infra === NaN) {
