@@ -13,7 +13,7 @@ html { background: #ccc; font: 12px/14px Arial, Helvetica, sans-serif; }
 function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 3000) {
 
 	if (infra === undefined || infra === "" || infra === null || infra === NaN) {
-		var infra = "0";
+		var infra = 0;
 	}
 
 	var standard = 20;
@@ -21,12 +21,6 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 3000) 
 	var infra = infra.replace(/\$|\,/g,'');
 
 	var infra = parseFloat(infra);
-	
-	var tech = document.getElementById('tech');
-	
-	if(tech.value.length == 0) {
-    		tech.value = "3000";
-	}
 	
 	var tech = tech.replace(/\$|\,/g,'');
 
@@ -159,6 +153,11 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 3000) 
 	}
 	else{
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3><br>You won't see a rating if Current Warchest is blank";
+	}
+	tech2 = document.getElementById('tech');
+	
+	if(tech2.value.length == 0) {
+    		tech2.value = "3000";
 	}
 }
 </script>
