@@ -19,24 +19,19 @@
       }
       form { border: 1px solid hsl(30, 76%, 10%);
 }
-
-.techin {
-  display: flex; 
-  align-items: center;
-}
 input {
   width: 100%;
   font: inherit;
-  padding: 0.25em 0.5em;
-  border: 0.125em solid hsl(30, 76%, 10%); 
+  padding: 0px 0px;
+  border: 1px solid hsl(30, 76%, 10%); 
   outline: none;
 }
 /* Show red borders when filled, but invalid */
-techin:not(:placeholder-shown) {
+input:not(:placeholder-shown) {
   border-color: hsl(0, 76%, 50%);;
 }
 /* Show green borders when valid */
-techin:valid {
+input:valid {
   border-color: hsl(120, 76%, 50%);
 }
     </style>
