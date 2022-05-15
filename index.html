@@ -10,15 +10,14 @@ html { background: #ccc; font: 12px/14px Arial, Helvetica, sans-serif; }
 </style>
  
 <script>
-function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 3000) {
+function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	
 	tech2 = document.getElementById('tech');
 	
 	if(tech2.value.length == 0) {
-		tech = 3000;
-		tech2.value = "3000";
-		CalcWarchest(infra, warchestcurrent, rulername, password, 3000);
-		rerun = true;
+		tech = 0;
+		//tech2.value = "0";
+		CalcWarchest(infra, warchestcurrent, rulername, password, 0);
 	}
 
 	if (infra === undefined || infra === "" || infra === null || infra === NaN) {
@@ -41,7 +40,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 3000) 
 
 	var warchestcurrent = warchestcurrent.replace(/\$|\,/g,'');
 	
-	if (warchestcurrent == undefined || warchestcurrent == "" || warchestcurrent == null || warchestcurrent == NaN) {
+	if (warchestcurrent === undefined || warchestcurrent === "") {
 
 		var warchestcurrent = 0;
 
@@ -162,10 +161,6 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 3000) 
 	else{
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3><br>You won't see a rating if Current Warchest is blank";
 	}
-	if (rerun == true) {
-		rerun = false;
-		CalcWarchest(infra, warchestcurrent, rulername, password, 3000);
-	}
 }
 </script>
  
@@ -185,7 +180,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 3000) 
   </tr>
   <tr>
     <td>Your Tech Level:</td>
-    <td><input type="text" class="inputTech" id="tech" name="tech" value="3000" placeholder="3000" required onkeyup="CalcWarchest(infra.value, warchestcurrent.value, rulername.value, password.value, this.value);"></td>
+    <td><input type="text" class="inputTech" id="tech" name="tech" value="0" placeholder="3000" required onkeyup="CalcWarchest(infra.value, warchestcurrent.value, rulername.value, password.value, this.value);"></td>
   </tr>
   <tr>
     <td>Current Warchest:</td>
