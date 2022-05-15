@@ -12,7 +12,7 @@ html { background: #ccc; font: 12px/14px Arial, Helvetica, sans-serif; }
 <script>
 function CalcWarchest(infra = 0, warchestcurrent = 0, rulername, password, tech = 3000) {
 
-	if (infra == undefined || infra == "") {
+	if (infra == undefined || infra == "" || infra == null) {
 
 		var infra = 0;
 
@@ -24,7 +24,7 @@ function CalcWarchest(infra = 0, warchestcurrent = 0, rulername, password, tech 
 
 	var infra = parseFloat(infra);
 	
-	if (tech == undefined || tech == "") {
+	if (tech == undefined || tech == "" || tech == null) {
 
 		var tech = 3000;
 
@@ -40,7 +40,7 @@ function CalcWarchest(infra = 0, warchestcurrent = 0, rulername, password, tech 
 
 	var warchestcurrent = warchestcurrent.replace(/\$|\,/g,'');
 	
-	if (warchestcurrent == "") {
+	if (warchestcurrent == undefined || warchestcurrent == "" || warchestcurrent == null) {
 
 		var warchestcurrent = 0;
 
