@@ -8,14 +8,19 @@
 html { background: #ccc; font: 12px/14px Arial, Helvetica, sans-serif; }
 .container { width: 300px; margin: 50px auto; border: 2px solid #888; background: #fff; padding: 20px; }
 	input#tech, input#infra {
-        border: 2px solid hsl(0, 76%, 50%); 
+        border: 2px solid hsl(0, 76%, 50%);
+	outline: none;
+      }
+	input#rulername, input#warchestcurrent, input#password {
+        border: 2px solid hsl(30, 76%, 10%);
+	outline: none;
       }
       /* Show red borders when filled, but invalid */
-      input:not(:placeholder-shown)#tech, input:not(:placeholder-shown)#infra {
+      input:not(:placeholder-shown)#tech, input:not(:placeholder-shown)#infra, input:not(:placeholder-shown)#warchestcurrent {
         border-color: hsl(0, 76%, 50%);;
       }
       /* Show green borders when valid */
-      input:valid#tech, input:valid#infra {
+      input:valid#tech, input:valid#infra, input:not(:placeholder-shown)#warchestcurrent {
         border-color: hsl(120, 76%, 50%);
      }
 </style>
@@ -195,7 +200,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
   </tr>
   <tr>
     <td>Current Warchest:</td>
-    <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" placeholder="$1,000,000,000" onkeyup="CalcWarchest(infra.value, this.value, rulername.value, password.value, tech.value);"></td>
+    <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" pattern="[0-9,$]*[0-9,$]" placeholder="$1,000,000,000" onkeyup="CalcWarchest(infra.value, this.value, rulername.value, password.value, tech.value);"></td>
   </tr>
   <tr>
     <td>Your Password:</td>
