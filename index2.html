@@ -14,7 +14,7 @@
       body {
         padding-top: 50px;
       }
-      input.techinput {
+      input {
         width: 100%;
         font: inherit;
         padding: 0px 0px;
@@ -22,11 +22,11 @@
         outline: none;
       }
       /* Show red borders when filled, but invalid */
-      input.techinput:not(:placeholder-shown) {
+      input:not(:placeholder-shown) {
         border-color: hsl(0, 76%, 50%);;
       }
       /* Show green borders when valid */
-      input.techinput:valid {
+      input:valid {
         border-color: hsl(120, 76%, 50%);
      }
     </style>
@@ -74,7 +74,7 @@
         </ol>
         
         <form action="#" autocomplete="off">
-          <input type="text" name="techinput" id="techinput" required placeholder="Type something in here" pattern="[0-9,$]*[0-9,$]*">
+          <input type="text" name="tech" id="tech" required placeholder="3000" pattern="[0-9,$]*[0-9,$]*">
         </form>
         
       </div>
