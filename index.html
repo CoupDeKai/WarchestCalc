@@ -196,15 +196,15 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
   </tr>
   <tr>
     <td>Your Infra Level:</td>
-    <td><input type="text" class="inputInfra" id="infra" name="infra" placeholder="4999.99" required pattern="[0-9,.$ ]*\S[0-9,.$ ]*" onkeyup="CalcWarchest(this.value, warchestcurrent.value, rulername.value, password.value, tech.value);"></td>
+    <td><input type="text" class="inputInfra" id="infra" name="infra" placeholder="4999.99" required pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" onkeyup="CalcWarchest(this.value, warchestcurrent.value, rulername.value, password.value, tech.value);"></td>
   </tr>
   <tr>
     <td>Your Tech Level:</td>
-    <td><input type="text" class="inputTech" id="tech" name="tech" placeholder="3000" required pattern="[0-9,.$ ]*\S[0-9,.$ ]*" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, rulername.value, password.value, this.value);"></td>
+    <td><input type="text" class="inputTech" id="tech" name="tech" placeholder="3000" required pattern="[0-9,. ]*[0-9,.][0-9,. ]*" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, rulername.value, password.value, this.value);"></td>
   </tr>
   <tr>
     <td>Current Warchest:</td>
-    <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" pattern="[0-9,.$ ]*\S[0-9,.$ ]*" placeholder="$1,000,000,000" onkeyup="CalcWarchest(infra.value, this.value, rulername.value, password.value, tech.value);"></td>
+    <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" required pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" placeholder="$1,000,000,000" onkeyup="CalcWarchest(infra.value, this.value, rulername.value, password.value, tech.value);"></td>
   </tr>
   <tr>
     <td>Your Password:</td>
