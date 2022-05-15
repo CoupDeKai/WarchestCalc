@@ -26,7 +26,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 3000) 
 	
 	var tech = tech || 3000;
 	
-	if (tech == undefined || tech == "" || tech == null || tech == NaN) {
+	if (typeof tech === "undefined" || tech == "" || tech == null || tech == NaN) {
 
 		var tech = 3000;
 
