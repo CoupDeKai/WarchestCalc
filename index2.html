@@ -14,7 +14,7 @@
       body {
         padding-top: 50px;
       }
-      input {
+      input#tech {
         width: 100%;
         font: inherit;
         padding: 0px 0px;
@@ -22,11 +22,11 @@
         outline: none;
       }
       /* Show red borders when filled, but invalid */
-      input:not(:placeholder-shown) {
+      input:not(:placeholder-shown)#tech {
         border-color: hsl(0, 76%, 50%);;
       }
       /* Show green borders when valid */
-      input:valid {
+      input:valid#tech {
         border-color: hsl(120, 76%, 50%);
      }
     </style>
