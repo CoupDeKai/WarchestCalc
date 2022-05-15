@@ -24,13 +24,13 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 3000) 
 
 	var infra = parseFloat(infra);
 	
+	tech = tech || 3000;
+	
 	if (typeof tech === "undefined" || tech === undefined || tech == "" || tech == null || isNaN(parseFloat(tech))) {
 
 		tech = 3000;
 
 	}
-	
-	tech = tech.value || 3000;
 	
 	tech = tech.replace(/\$|\,/g,'');
 
