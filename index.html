@@ -13,9 +13,7 @@ html { background: #ccc; font: 12px/14px Arial, Helvetica, sans-serif; }
 function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 3000) {
 
 	if (infra === undefined || infra === "" || infra === null || infra === NaN) {
-
-		var infra = 0;
-
+		var infra = "0";
 	}
 
 	var standard = 20;
@@ -24,12 +22,10 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 3000) 
 
 	var infra = parseFloat(infra);
 	
-	var tech = tech || 3000;
+	var tech = document.getElementById('tech');
 	
-	if (typeof tech === "undefined" || tech === undefined || tech === "" || tech < 0 || tech === null || isNaN(parseFloat(tech))) {
-
-		var tech = 3000;
-
+	if(tech.value.length == 0) {
+    		tech.value = "3000";
 	}
 	
 	var tech = tech.replace(/\$|\,/g,'');
@@ -179,11 +175,11 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 3000) 
   </tr>
   <tr>
     <td>Your Infra Level:</td>
-    <td><input type="text" class="inputInfra" id="infra" name="infra" placeholder="4999.99" onkeyup="CalcWarchest(this.value, warchestcurrent.value, rulername.value, password.value, tech.value);"></td>
+    <td><input type="text" class="inputInfra" id="infra" name="infra" placeholder="4999.99" required onkeyup="CalcWarchest(this.value, warchestcurrent.value, rulername.value, password.value, tech.value);"></td>
   </tr>
   <tr>
     <td>Your Tech Level:</td>
-    <td><input type="text" class="inputTech" id="tech" name="tech" value="3000" placeholder="3000" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, rulername.value, password.value, this.value);"></td>
+    <td><input type="text" class="inputTech" id="tech" name="tech" value="3000" placeholder="3000" required onkeyup="CalcWarchest(infra.value, warchestcurrent.value, rulername.value, password.value, this.value);"></td>
   </tr>
   <tr>
     <td>Current Warchest:</td>
