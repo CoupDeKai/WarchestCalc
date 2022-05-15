@@ -24,13 +24,13 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 3000) 
 
 	var infra = parseFloat(infra);
 	
-	if (typeof tech === "undefined" || tech == "" || tech == null || isNaN(parseFloat(tech))) {
+	if (typeof tech === "undefined" || tech === undefined || tech == "" || tech == null || isNaN(parseFloat(tech))) {
 
 		tech = 3000;
 
 	}
 	
-	tech = tech || 3000;
+	tech = tech.value || 3000;
 	
 	tech = tech.replace(/\$|\,/g,'');
 
@@ -194,11 +194,11 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 3000) 
     <td><input type="text" class="inputPassword" id="password" name="password" placeholder="12345" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, rulername.value, this.value, tech.value);"></td>
   </tr>
 </table>
-  <input type="checkbox" id="nukes" name="nukes" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value, document.getElementById(&#39;rulername&#39;).value, document.getElementById(&#39;password&#39;).value), document.getElementById(&#39;tech&#39;).value)">
+  <input type="checkbox" id="nukes" name="nukes" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value, document.getElementById(&#39;rulername&#39;).value, document.getElementById(&#39;password&#39;).value, document.getElementById(&#39;tech&#39;).value))">
     <label for="nukes">Nukes</label>
-    <input type="checkbox" id="navy" name="navy" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value, document.getElementById(&#39;rulername&#39;).value, document.getElementById(&#39;password&#39;).value), document.getElementById(&#39;tech&#39;).value)">
+    <input type="checkbox" id="navy" name="navy" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value, document.getElementById(&#39;rulername&#39;).value, document.getElementById(&#39;password&#39;).value, document.getElementById(&#39;tech&#39;).value))">
     <label for="navy">Navy</label>
-    <input type="checkbox" id="wrc" name="wrc" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value, document.getElementById(&#39;rulername&#39;).value, document.getElementById(&#39;password&#39;).value), document.getElementById(&#39;tech&#39;).value)">
+    <input type="checkbox" id="wrc" name="wrc" onchange="CalcWarchest(document.getElementById(&#39;infra&#39;).value, document.getElementById(&#39;warchestcurrent&#39;).value, document.getElementById(&#39;rulername&#39;).value, document.getElementById(&#39;password&#39;).value, document.getElementById(&#39;tech&#39;).value))">
     <label for="wrc">WRC</label>
   <div id="warchest"></div>
   <div id="debug"></div>
