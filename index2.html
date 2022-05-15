@@ -17,6 +17,39 @@
       .starter-template {
         padding: 40px 15px;
       }
+      form {
+  max-width: 20em;
+  border: 0.5em solid hsl(30, 76%, 10%);
+  padding: 2em;
+  background: white;
+}
+
+.input {
+  display: flex; 
+  align-items: center;
+}
+
+label {
+  margin-right: 1ch;
+}
+
+input {
+  width: 100%;
+  font: inherit;
+  padding: 0.25em 0.5em;
+  border: 0.125em solid hsl(30, 76%, 10%); 
+  outline: none;
+}
+
+/* Show red borders when filled, but invalid */
+input:not(:placeholder-shown) {
+  border-color: hsl(0, 76%, 50%);;
+}
+
+/* Show green borders when valid */
+input:valid {
+  border-color: hsl(120, 76%, 50%);
+}
     </style>
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -60,8 +93,20 @@
           <li><a href="#">Library</a></li>
           <li class="active">Data</li>
         </ol>
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        
+        <form action="#" autocomplete="off">
+          <h2>Empty Validation with pure CSS</h2>
+          <p>Type something into this input field below.</p>
+          <ul>
+            <li>When input is filled: Borders turn green</li>
+            <li>When validation fails: Borders turn red</li>
+          </ul>
+          <div class="input">
+            <label for="input" >Label </label>
+            <input type="text" name="input" id="input" required placeholder="Type something in here" pattern=".*\S.*">
+          </div>
+        </form>
+        
       </div>
 <div>
 
