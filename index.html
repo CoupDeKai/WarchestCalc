@@ -130,10 +130,10 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	}
 
 	if(document.getElementById('wrc').checked == true) {
-		if(isNaN(tech3) || tech2.value.length == 0) {
+		if(isNaN(tech3.replace(/\$|\,| /g,'')) || tech2.value.length == 0) {
 		   num = num * 1.24;
 		} else {
-		   num = num * (1.24+(tech3*0.00002));
+		   num = num * (1.24+(tech3.replace(/\$|\,| /g,'')*0.00002));
 		}
 		wrcanswer = "Yes";
 	}
