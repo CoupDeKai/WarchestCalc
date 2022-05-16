@@ -60,7 +60,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	
 	var warchestcurrent = Number(warchestcurrent);
 	
-	if (warchestcurrent === undefined || warchestcurrent === "" || warchestcurrent === NaN) {
+	if (warchestcurrent === undefined || warchestcurrent === "" || isNaN(warchestcurrent)) {
 	    
 		var warchestcurrent = 0;
 
