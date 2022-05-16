@@ -48,15 +48,21 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 		infra3 = infra2;
 	}
 
-	var standard = 20;
+	standard = 20;
 
-	infra3 = infra3.replace(/\$|\,| /g,'');
+	infra3 = infra.replace(/\$|\,| /g,'');
 
 	infra3 = parseFloat(infra3);
 	
 	tech3 = tech.replace(/\$|\,| /g,'');
 
 	tech3 = parseFloat(tech);
+	
+	if (isNaN(infra3)) {
+	    
+		infra3 = 0;
+
+	}
 	
 	//var rulername = rulername.replace(/\$|\,/g,'');
 	
@@ -72,7 +78,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 
 	}
 
-	var cost = 0.04;
+	cost = 0.04;
 
 	if(infra3 >= 8000) { cost = 0.1750; }
 	else if(infra3 >= 5000) { cost = 0.1725; }
@@ -86,7 +92,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	else if(infra3 >= 200) { cost = 0.06; }
 	else if(infra3 >= 100) { cost = 0.05; }
 
-	var days = standard * 3;
+	days = standard * 3;
 
 	if (infra3 >= 2000) { days = standard * 4; }
 	if (infra3 >= 4000) { days = standard * 5; }
