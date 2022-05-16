@@ -58,13 +58,13 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 
 	var warchestcurrent = warchestcurrent.replace(/\$|\,| /g,'');
 	
-	if (warchestcurrent === undefined || warchestcurrent === "") {
+	var warchestcurrent = Number(warchestcurrent);
+	
+	if (warchestcurrent === undefined || warchestcurrent === "" || warchestcurrent === NaN) {
 	    
 		var warchestcurrent = 0;
 
 	}
-
-	var warchestcurrent = Number(warchestcurrent);
 
 	var cost = 0.04;
 
