@@ -16,11 +16,11 @@ html { background: #ccc; font: 12px/14px Arial, Helvetica, sans-serif; }
 	outline: none;
       }
       /* Show red borders when filled, but invalid */
-      input:not(:placeholder-shown)#tech, input:not(:placeholder-shown)#infra, input:not(:placeholder-shown)#warchestcurrent , input:not(:placeholder-shown)#rulername , input:not(:placeholder-shown)#password {
+      input:not(:placeholder-shown)#tech, input:not(:placeholder-shown)#infra, input:not(:placeholder-shown)#warchestcurrent {
         border-color: hsl(0, 76%, 50%);
       }
       /* Show green borders when valid */
-      input:valid#tech, input:valid#infra, input:valid#warchestcurrent, input#rulername, input#password{
+      input:valid#tech, input:valid#infra, input:valid#warchestcurrent, input:valid#rulername, input:valid#password{
         border-color: hsl(120, 76%, 50%);
      }
 </style>
@@ -288,7 +288,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
   <table>
   <tr>
     <td>Your Ruler Name:</td>
-    <td><input type="text" class="inputRulername" id="rulername" name="rulername" placeholder="Not Nation Name!" required pattern="[0-9,. ]*[0-9,.][0-9,. ]*" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, this.value, password.value, tech.value);"></td>
+    <td><input type="text" class="inputRulername" id="rulername" name="rulername" placeholder="Not Nation Name!" required pattern="[0-9,. _a-zA-Z]*[0-9,._a-zA-Z][0-9,. _a-zA-Z]*" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, this.value, password.value, tech.value);"></td>
     <td></td>
   </tr>
   <tr>
