@@ -303,7 +303,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
   </tr>
   <tr>
     <td>Current Warchest:</td>
-    <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" required pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" placeholder="$1,000,000,000" onkeyup="CalcWarchest(infra.value, this.value, rulername.value, password.value, tech.value);"></td>
+    <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" required pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" placeholder="$1,000,000,000" title="$., 1234567890" onkeyup="CalcWarchest(infra.value, this.value, rulername.value, password.value, tech.value);"></td>
     <td style="color:red; font-weight:bold;">*</td>
   </tr>
   <tr>
