@@ -56,7 +56,9 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	
 	warchest2 = document.getElementById('warchestcurrent');
 	
-	warchest2 = warchest2.replace(/\$|\,| /g,'');
+	warchest4 = warchest2.replace(/\$|\,| /g,'');
+	
+	warchest4 = parseFloat(warchest4)
 	
 	if(warchest2.value.length == 0) {
 		warchest3 = 0;
@@ -191,7 +193,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	
 	if(currentnum/expectednum >= 1.8 && infra2.value.length != 0 && !isNaN(Number(infra2.value))) {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>1. Excellent</h3><br><br>";
-		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
+		if (warchest2.value.length == 0 || isNaN(Number(warchest4))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
 			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
@@ -201,7 +203,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	}
 	else if(currentnum/expectednum >= 1.4 && infra2.value.length != 0 && !isNaN(Number(infra2.value))) {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>2. Very Good</h3><br><br>";
-		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
+		if (warchest2.value.length == 0 || isNaN(Number(warchest4))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
 			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
@@ -211,7 +213,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	}
 	else if(currentnum/expectednum >= 1.1 && infra2.value.length != 0 && !isNaN(Number(infra2.value))) {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>3. Good</h3><br><br>";
-		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
+		if (warchest2.value.length == 0 || isNaN(Number(warchest4))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
 			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
@@ -221,7 +223,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	}
 	else if(currentnum/expectednum >= 0.9 && infra2.value.length != 0 && !isNaN(Number(infra2.value))) {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>4. Standard</h3><br><br>";
-		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
+		if (warchest2.value.length == 0 || isNaN(Number(warchest4))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
 			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
@@ -231,7 +233,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	}
 	else if(currentnum/expectednum >= 0.6 && infra2.value.length != 0 && !isNaN(Number(infra2.value))) {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>5. Weak</h3><br><br>";
-		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
+		if (warchest2.value.length == 0 || isNaN(Number(warchest4))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
 			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
@@ -241,7 +243,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	}
 	else if(currentnum/expectednum >= 0.2 && infra2.value.length != 0 && !isNaN(Number(infra2.value))) {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>6. Very Weak</h3><br><br>";
-		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
+		if (warchest2.value.length == 0 || isNaN(Number(warchest4))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
 			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
@@ -251,7 +253,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	}
 	else if(currentnum/expectednum < 0.2 && !isNaN(currentnum) && infra2.value.length != 0 && !isNaN(Number(infra2.value))){
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>7. Critical</h3><br><br>";
-		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
+		if (warchest2.value.length == 0 || isNaN(Number(warchest4))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
 			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
@@ -261,7 +263,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	}
 	else if(!isNaN(currentnum) || infra2.value.length == 0){
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Infrastructure is blank or NaN<br>";
-		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
+		if (warchest2.value.length == 0 || isNaN(Number(warchest4))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
 			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
@@ -271,7 +273,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	}
 	else {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3><br><br>";
-		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
+		if (warchest2.value.length == 0 || isNaN(Number(warchest4))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
 			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
