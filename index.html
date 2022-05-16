@@ -62,7 +62,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 
 	}
 	
-	//var rulername = rulername.replace(/\$|\,/g,'');
+	var rulername = rulername.replace(/\$|\,/g,'');
 	
 	var password = password.replace(/\$|\,| /g,'');
 
@@ -196,7 +196,11 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	else {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3><br><br>";
 	}
-	if (rulername.value.length == 0 || password.value.length == 0) {
+	
+	ruler2 = rulername;
+	pass2 = password;
+	
+	if (ruler2.value.length == 0 || pass2.value.length == 0) {
 		document.getElementById("debug").innerHTML = "<br>Enter Ruler Name & Password to submit results";
 	}
 	else if(currentnum == 0) {
