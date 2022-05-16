@@ -7,17 +7,17 @@
 <style type="text/css">
 html { background: #ccc; font: 12px/14px Arial, Helvetica, sans-serif; }
 .container { width: 300px; margin: 50px auto; border: 2px solid #888; background: #fff; padding: 20px; }
-	input#tech, input#infra {
+	input#infra {
         border: 2px solid hsl(0, 76%, 50%);
 	outline: none;
       }
-	input#rulername, input#warchestcurrent, input#password {
+	input#tech, input#rulername, input#warchestcurrent, input#password {
         border: 2px solid hsl(30, 76%, 10%);
 	outline: none;
       }
       /* Show red borders when filled, but invalid */
       input:not(:placeholder-shown)#tech, input:not(:placeholder-shown)#infra, input:not(:placeholder-shown)#warchestcurrent {
-        border-color: hsl(0, 76%, 50%);;
+        border-color: hsl(0, 76%, 50%);
       }
       /* Show green borders when valid */
       input:valid#tech, input:valid#infra, input:valid#warchestcurrent {
