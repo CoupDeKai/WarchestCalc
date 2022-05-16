@@ -76,7 +76,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	
 	var warchestcurrent = Number(warchestcurrent);
 	
-	var warchestcurrent2 = Number(warchestcurrent);
+	warchestcurrent2 = Number(warchestcurrent);
 	
 	if (warchestcurrent === undefined || warchestcurrent === "" || isNaN(warchestcurrent)) {
 	    
@@ -195,7 +195,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	else if(currentnum/expectednum >= 0.2 && infra2.value.length != 0) {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>6. Very Weak</h3><br><br>";
 	}
-	else if(currentnum/expectednum < 0.2 && !isNaN(warchestcurrent) && infra2.value.length != 0){
+	else if(currentnum/expectednum < 0.2 && !isNaN(currentnum) && infra2.value.length != 0){
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>7. Critical</h3><br><br>";
 	}
 	else if(!isNaN(currentnum) && infra2.value.length == 0){
@@ -203,6 +203,8 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	}
 	else if(!isNaN(warchestcurrent2)){
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3><br>You won't see a rating if Warchest is blank or NaN";
+	}
+	else {
 	}
 	if (ruler2.value.length == 0 || pass2.value.length == 0) {
 		document.getElementById("debug").innerHTML = "Enter Ruler Name & Password to submit results";
@@ -218,7 +220,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
  
 </head>
 
-<body onload="CalcWarchest(0,0,0,0,0)">
+<body>
  <div class="container">
   <h3>Warchest Calculator</h3>
   <table>
