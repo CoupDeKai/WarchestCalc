@@ -7,11 +7,11 @@
 <style type="text/css">
 html { background: #ccc; font: 12px/14px Arial, Helvetica, sans-serif; }
 .container { width: 300px; margin: 50px auto; border: 2px solid #888; background: #fff; padding: 20px; }
-	input#infra {
+	input#infra, input#warchestcurrent {
         border: 2px solid hsl(0, 76%, 50%);
 	outline: none;
       }
-	input#tech, input#rulername, input#warchestcurrent, input#password {
+	input#tech, input#rulername, input#password {
         border: 2px solid hsl(30, 76%, 10%);
 	outline: none;
       }
@@ -304,7 +304,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
   <tr>
     <td>Current Warchest:</td>
     <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" required pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" placeholder="$1,000,000,000" onkeyup="CalcWarchest(infra.value, this.value, rulername.value, password.value, tech.value);"></td>
-    <td></td>
+    <td style="color:red; font-weight:bold;">*</td>
   </tr>
   <tr>
     <td>Your Password:</td>
