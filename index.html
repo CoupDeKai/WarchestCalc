@@ -191,90 +191,90 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>1. Excellent</h3><br><br>";
 		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
-			document.getElementById("debug").innerHTML = "To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
+			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
 		else {
-			document.getElementById("debug").innerHTML = "<br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
+			document.getElementById("debug").innerHTML = "<br><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
 		}
 	}
 	else if(currentnum/expectednum >= 1.4 && infra2.value.length != 0 && !isNaN(Number(infra2.value))) {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>2. Very Good</h3><br><br>";
 		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
-			document.getElementById("debug").innerHTML = "To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
+			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
 		else {
-			document.getElementById("debug").innerHTML = "<br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
+			document.getElementById("debug").innerHTML = "<br><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
 		}	
 	}
 	else if(currentnum/expectednum >= 1.1 && infra2.value.length != 0 && !isNaN(Number(infra2.value))) {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>3. Good</h3><br><br>";
 		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
-			document.getElementById("debug").innerHTML = "To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
+			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
 		else {
-			document.getElementById("debug").innerHTML = "<br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
+			document.getElementById("debug").innerHTML = "<br><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
 		}	
 	}
 	else if(currentnum/expectednum >= 0.9 && infra2.value.length != 0 && !isNaN(Number(infra2.value))) {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>4. Standard</h3><br><br>";
 		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
-			document.getElementById("debug").innerHTML = "To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
+			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
 		else {
-			document.getElementById("debug").innerHTML = "<br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
+			document.getElementById("debug").innerHTML = "<br><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
 		}	
 	}
 	else if(currentnum/expectednum >= 0.6 && infra2.value.length != 0 && !isNaN(Number(infra2.value))) {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>5. Weak</h3><br><br>";
 		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
-			document.getElementById("debug").innerHTML = "To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
+			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
 		else {
-			document.getElementById("debug").innerHTML = "<br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
+			document.getElementById("debug").innerHTML = "<br><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
 		}
 	}
 	else if(currentnum/expectednum >= 0.2 && infra2.value.length != 0 && !isNaN(Number(infra2.value))) {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>6. Very Weak</h3><br><br>";
 		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
-			document.getElementById("debug").innerHTML = "To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
+			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
 		else {
-			document.getElementById("debug").innerHTML = "<br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
+			document.getElementById("debug").innerHTML = "<br><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
 		}
 	}
 	else if(currentnum/expectednum < 0.2 && !isNaN(currentnum) && infra2.value.length != 0 && !isNaN(Number(infra2.value))){
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>7. Critical</h3><br><br>";
 		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
-			document.getElementById("debug").innerHTML = "To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
+			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
 		else {
-			document.getElementById("debug").innerHTML = "<br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
+			document.getElementById("debug").innerHTML = "<br><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
 		}
 	}
 	else if(!isNaN(currentnum) || infra2.value.length == 0){
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Infrastructure is blank or NaN<br>";
 		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
-			document.getElementById("debug").innerHTML = "To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
+			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
 		else {
-			document.getElementById("debug").innerHTML = "<br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
+			document.getElementById("debug").innerHTML = "<br><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
 		}
 	}
 	else {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3><br><br>";
 		if (warchest2.value.length == 0 || isNaN(Number(warchest2.value))) {
 			document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3>You won't see a rating if Warchest is blank or NaN<br>";
-			document.getElementById("debug").innerHTML = "To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
+			document.getElementById("debug").innerHTML = "<br>To submit results please ensure Current Warchest is valid and not empty. Also don't forget your Ruler Name and Password!";
 		}
 		else {
-			document.getElementById("debug").innerHTML = "<br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
+			document.getElementById("debug").innerHTML = "<br><br><input type=\"button\" onclick=\"location.href='https://docs.google.com/forms/d/e/1FAIpQLSeBD9WvEbe5zyiYAuQHFf18MZL13SrQnE5FZdMFarqgBCthPg/formResponse?usp=pp_url&entry.116155244="+password+"&entry.425271094="+rulername+"&entry.1844373226="+warchestcurrent+"&entry.18667097="+nukesanswer+"&entry.2140645400="+navyanswer+"&entry.160236268="+wrcanswer+"&submit=Submit';\" value=\"Submit Warchest Audit Results\" />";
 		}
 	}
 }
