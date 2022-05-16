@@ -34,7 +34,23 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	
 	ruler2 = document.getElementById('rulername');
 	
+	if(ruler.value.length == 0) {
+		ruler = "";
+	} else {
+		ruler3 = ruler2;
+	}
+	
+	ruler3 = rulername.replace(/\$|\,| /g,'');
+	
 	pass2 = document.getElementById('password');
+	
+	if(pass2.value.length == 0) {
+		pass3 = "";
+	} else {
+		pass3 = pass2;
+	}
+	
+	pass3 = password.replace(/\$|\,| /g,'');
 	
 	if(tech2.value.length == 0) {
 		tech3 = 0;
@@ -46,8 +62,6 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 
 	if(infra2.value.length == 0) {
 		infra3 = 0;
-		//tech2.value = "0";
-		//CalcWarchest(infra, warchestcurrent, rulername, password, 0);
 	} else {
 		infra3 = infra2;
 	}
@@ -204,7 +218,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	else {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3><br><br>";
 	}
-	if (ruler2.value.length == 0 || pass2.value.length == 0) {
+	if (ruler3.value.length == 0 || pass3.value.length == 0) {
 		document.getElementById("debug").innerHTML = "Enter Ruler Name & Password to submit results";
 	}
 	else if(chest2.value.length == 0) {
