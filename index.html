@@ -20,7 +20,7 @@ html { background: #ccc; font: 12px/14px Arial, Helvetica, sans-serif; }
         border-color: hsl(0, 76%, 50%);
       }
       /* Show green borders when valid */
-      input:valid#tech, input:valid#infra, input:valid#warchestcurrent {
+      input:valid#tech, input:valid#infra, input:valid#warchestcurrent, input#rulername, input#password{
         border-color: hsl(120, 76%, 50%);
      }
 </style>
@@ -293,17 +293,17 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
   </tr>
   <tr>
     <td>Your Infra Level:</td>
-    <td><input type="text" class="inputInfra" id="infra" name="infra" placeholder="4999.99" required pattern="[0-9,. ]*[0-9,.][0-9,. ]*" onkeyup="CalcWarchest(this.value, warchestcurrent.value, rulername.value, password.value, tech.value);"></td>
+    <td><input type="text" class="inputInfra" id="infra" name="infra" placeholder="4999.99" required pattern="[0-9,. ]*[0-9,.][0-9,. ]*" title="Valid characters: ., 1234567890" onkeyup="CalcWarchest(this.value, warchestcurrent.value, rulername.value, password.value, tech.value);"></td>
     <td style="color:red; font-weight:bold;">*</td>
   </tr>
   <tr>
     <td>Your Tech Level:</td>
-    <td><input type="text" class="inputTech" id="tech" name="tech" placeholder="3000" required pattern="[0-9,. ]*[0-9,.][0-9,. ]*" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, rulername.value, password.value, this.value);"></td>
+    <td><input type="text" class="inputTech" id="tech" name="tech" placeholder="3000" required pattern="[0-9,. ]*[0-9,.][0-9,. ]*" title="Valid characters: ., 1234567890" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, rulername.value, password.value, this.value);"></td>
     <td></td>
   </tr>
   <tr>
     <td>Current Warchest:</td>
-    <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" required pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" placeholder="$1,000,000,000" title="$., 1234567890" onkeyup="CalcWarchest(infra.value, this.value, rulername.value, password.value, tech.value);"></td>
+    <td><input type="text" class="inputWarchestcurrent" id="warchestcurrent" name="warchestcurrent" required pattern="[0-9,.$ ]*[0-9,.$][0-9,.$ ]*" placeholder="$1,000,000,000" title="Valid characters: $., 1234567890" onkeyup="CalcWarchest(infra.value, this.value, rulername.value, password.value, tech.value);"></td>
     <td style="color:red; font-weight:bold;">*</td>
   </tr>
   <tr>
