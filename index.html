@@ -32,26 +32,6 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	
 	infra2 = document.getElementById('infra');
 	
-	ruler2 = document.getElementById('rulername');
-	
-	if(ruler2.value.length == 0) {
-		ruler3 = "";
-	} else {
-		ruler3 = rulername.replace(/\$|\,| /g,'');
-	}
-	
-	
-	
-	pass2 = document.getElementById('password');
-	
-	if(pass2.value.length == 0) {
-		pass3 = "";
-	} else {
-		pass3 = password.replace(/\$|\,| /g,'');
-	}
-	
-	
-	
 	if(tech2.value.length == 0) {
 		tech3 = 0;
 		//tech2.value = "0";
@@ -89,8 +69,6 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	var warchestcurrent = warchestcurrent.replace(/\$|\,| /g,'');
 	
 	var warchestcurrent = Number(warchestcurrent);
-	
-	chest2 =  Number(warchestcurrent);
 	
 	if (warchestcurrent === undefined || warchestcurrent === "" || isNaN(warchestcurrent)) {
 	    
@@ -218,10 +196,10 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	else {
 		document.getElementById("warchest").innerHTML = "<br />Your Warchest Is: <h3>" + (((previewsign)?'':'-') + '$' + previewnum + '.' + previewcents) + "</h3>Your Warchest Should Be At Least: <h3>" + (((sign)?'':'-') + '$' + num + '.' + cents) + "</h3>On a scale going from '1. Excellent' to '7. Critical', your warchest has been rated as: <h3>?. Unknown</h3><br><br>";
 	}
-	if (ruler3.value.length == 0 || pass3.value.length == 0) {
+	if (rulername.value.length == 0 || password.value.length == 0) {
 		document.getElementById("debug").innerHTML = "<br>Enter Ruler Name & Password to submit results";
 	}
-	else if(chest2.value.length == 0) {
+	else if(currentnum == 0) {
 		document.getElementById("debug").innerHTML = "<br>Warchest valid characters: $,. 1234567890";
 	}
 	else {
