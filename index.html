@@ -38,7 +38,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 	
 	chest2 = document.getElementById('warchestcurrent');
 	
-	chest2 = chest2.replace(/\$|\,| /g,'');
+	chest2 = warchestcurrent.replace(/\$|\,| /g,'');
 	
 	if(tech2.value.length == 0) {
 		tech3 = 0;
