@@ -123,6 +123,10 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 
 	expectednum = num;
 	
+	if(isNaN(currentnum)) {
+		currentnum = "0";
+	}
+	
 	currentnum = parseFloat(warchestcurrent);
 	
 	num = Math.floor(num*100+0.50000000001);
