@@ -49,9 +49,9 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
 		infra3 = infra2;
 	}
 
-	infra3 = infra.replace(/\$|\,| /g,'');
+	//infra3 = infra.replace(/\$|\,| /g,'');
 
-	infra3 = parseFloat(infra3);
+	infra3 = parseFloat(infra.replace(/\$|\,| /g,''));
 	
 	
 	warchest2 = document.getElementById('warchestcurrent');
