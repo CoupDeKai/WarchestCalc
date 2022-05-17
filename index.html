@@ -308,7 +308,7 @@ function CalcWarchest(infra, warchestcurrent, rulername, password, tech = 0) {
   </tr>
   <tr>
     <td>Your Password:</td>
-    <td><input type="text" class="inputPassword" id="password" name="password" placeholder="Audit pass (not CN pass!)" required pattern="[0-9,. _a-zA-Z-+&]*[0-9,._a-zA-Z-+&][0-9,. _a-zA-Z-+&]*" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, rulername.value, this.value, tech.value);"></td>
+    <td><input type="text" class="inputPassword" id="password" name="password" placeholder="Audit pass (not CN pass!)" required pattern="[0-9,. ]*[0-9,.][0-9,. ]*" onkeyup="CalcWarchest(infra.value, warchestcurrent.value, rulername.value, this.value, tech.value);"></td>
     <td></td>
   </tr>
 </table>
